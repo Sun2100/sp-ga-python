@@ -2,3 +2,5 @@ title,expense_type,amount,date
 another,income,10,10
 title,income,20,10
 another,income,50,20
+title3,income,100,1-2-0
+title5,income,20,3-20-10
