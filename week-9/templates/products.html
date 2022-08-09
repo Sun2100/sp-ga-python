@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<table>
+    <thead>
+         <th>id</th>  
+         <th>name</th>   
+         <th>description</th>
+         <th>price</th>   
+
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td> {{ product.id }}</td>
+            <td> {{ product.name }}</td>
+            <td> {{ product.description }}</td>
+            <td> {{ product.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% for product in products %}
+    <div> {{product.name}} - {{product.description}}</div>  
+{% endfor %}
+
+
+
+
+
+{# jinja #}
+
+{# use for loop to display items in products list #}
+{#for each item, display the name and the description in a seperate div #}
