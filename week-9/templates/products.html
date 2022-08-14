@@ -1,6 +1,11 @@
 <!doctype html>
 <title>Hello from Flask</title>
-<table>
+{% extends 'base.html' %}
+{% block header%}
+    <h1>Products</h1>
+{% endblock%}
+{% block content %}
+<table class="table">
     <thead>
          <th>id</th>  
          <th>name</th>   
@@ -15,11 +20,21 @@
             <td> {{ product.name }}</td>
             <td> {{ product.description }}</td>
             <td> {{ product.price }}</td>
+            
+            <td>
+                <a href="#" class="btn btn-success btn-md">
+                    <span class="glyphicon glyphicon-pencil"></span> Edit 
+                    </a> 
+                    <a href="#" class="btn btn-danger btn-md">
+                        <span class="glyphicon glyphicon-trash"></span> Delete 
+                    </a>                
+                                        
+                </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
+{% endblock %}
 
 {% for product in products %}
     <div> {{product.name}} - {{product.description}}</div>  
