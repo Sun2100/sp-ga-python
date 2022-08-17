@@ -1,0 +1,57 @@
+
+<title>My Films</title>
+{% extends 'base.html' %}
+{% block header%}
+    <h1>My Film Lists</h1>
+{% endblock%}
+{% block content %}
+<table class="table">
+    <thead> 
+         <th>id</th>
+         <th>name</th>   
+         <th>type</th>
+         <th>date</th>   
+
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <form action="/my/films/{{product.id}}/delete" method="post">
+
+        
+        <tr>
+            <td> {{ product.id }}</td>
+            <td> {{ product.name }}</td>
+            <td> {{ product.type }}</td>
+            <td> {{ product.date }}</td>
+            
+            <td>
+            <a href="/my/films/{{product.id}}" class="btn btn-success btn-md">
+                <span class="glyphicon glyphicon-pencil"></span> Edit
+                </a>
+                
+                <button type="submit" name="delete" value="{{product.id}}" class="btn btn-danger btn-md">Delete</button>    
+                                    
+            </td>
+        </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+    <style>
+        body {
+            background-color: #FFB883;
+            color: black
+        }
+    </style>
+</table>
+{% endblock %}
+
+
+
+
+
+
+
+{# jinja #}
+
+{# use for loop to display items in products list #}
+{#for each item, display the name and the description in a seperate div #}

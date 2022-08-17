@@ -1,0 +1,32 @@
+<title>Add Films</title>
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>Add New Films</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name"/>
+        </div>
+        <div class="form-group">
+            <label>Type</label>
+            <input type="text" name="type"/>
+        </div>
+        <div class="form-group">
+            <label>Date(Year)</label>
+            <input type="text" name="date"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <style>
+        body {
+            background-color: #FFB883;
+            color: black
+        }
+    </style>
+{% endblock %}
+
